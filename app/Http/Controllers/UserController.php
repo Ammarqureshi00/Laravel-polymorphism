@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,7 +20,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $user = User::find(3);
+        $user->image()->create([
+            'url' => 'public/images/users/user3.jpg'
+        ]);
     }
 
     /**
