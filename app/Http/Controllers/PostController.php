@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $post = Post::with("image")->find(3);
+        return $post;
     }
 
     /**
