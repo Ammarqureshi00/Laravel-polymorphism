@@ -12,7 +12,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::with("image")->get();
+        return $user;
     }
 
     /**
