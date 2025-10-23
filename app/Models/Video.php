@@ -14,10 +14,18 @@ class Video extends Model
     }
     public function latestComment()
     {
-        return $this->morphOne(Comment::class, 'commentable');
+        return $this->morphOne(Comment::class, 'commentable')->latestOfMany();
     }
     public function oldestComment()
     {
-        return $this->morphOne(Comment::class, 'commentable');
+        return $this->morphOne(Comment::class, 'commentable')->oldestOfMany();
+    }
+    public function BestComment()
+    {
+        return $this->morphOne(Comment::class, 'commentable')->ofMany('likes', 'max');
+    }
+    public function leastComment()
+    {
+        return $this->morphOne(Comment::class, 'commentable')->ofMany('likes', 'min');
     }
 }
