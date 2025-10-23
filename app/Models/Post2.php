@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Comment; // ✅ correct import syntax
 
-class Video extends Model
+class Post2 extends Model
 {
     protected $guarded = [];
     public function comment()
