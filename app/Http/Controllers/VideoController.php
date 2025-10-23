@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
@@ -11,7 +12,14 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $video = Video::with("comment")->find(1);
+        // return $video;
+        echo "<h1>$video->title</h1>";
+        echo "<h4>$video->url</h4>";
+        foreach ($video->comment  as $comment) {
+            echo $comment->detail;
+            echo "<hr>";
+        }
     }
 
     /**
@@ -19,7 +27,10 @@ class VideoController extends Controller
      */
     public function create()
     {
-        //
+        $video = Video::find(1);
+        $video->comment()->create([
+            'detail' => "Best Video"
+        ]);
     }
 
     /**

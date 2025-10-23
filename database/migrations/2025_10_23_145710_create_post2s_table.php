@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('post2', function (Blueprint $table) {
+        Schema::create('post2s', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('description');
+            $table->text('body');
             $table->timestamps();
         });
     }

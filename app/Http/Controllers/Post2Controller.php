@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post2;
+use Dom\Comment;
 use Illuminate\Http\Request;
 
 class Post2Controller extends Controller
@@ -11,7 +13,11 @@ class Post2Controller extends Controller
      */
     public function index()
     {
-        //
+        $post2 = Post2::find(3);
+        foreach ($post2->comment as $comment) {
+            echo $comment->detail;
+            echo "<hr>";
+        }
     }
 
     /**
@@ -19,7 +25,10 @@ class Post2Controller extends Controller
      */
     public function create()
     {
-        //
+        $post2 = Post2::find(3);
+        $post2->comment()->create([
+            'detail' => 'Best Post I ever seen"'
+        ]);
     }
 
     /**
