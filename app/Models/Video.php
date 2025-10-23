@@ -12,4 +12,12 @@ class Video extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+    public function latestComment()
+    {
+        return $this->morphOne(Comment::class, 'commentable');
+    }
+    public function oldestComment()
+    {
+        return $this->morphOne(Comment::class, 'commentable');
+    }
 }
