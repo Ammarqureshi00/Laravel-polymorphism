@@ -28,4 +28,9 @@ class Video extends Model
     {
         return $this->morphOne(Comment::class, 'commentable')->ofMany('likes', 'min');
     }
+    // this is make  the many to many relationship
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 }

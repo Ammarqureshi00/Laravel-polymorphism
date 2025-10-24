@@ -2,24 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Post2;
-
-use Dom\Comment;
 use Illuminate\Http\Request;
 
-class Post2Controller extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $post2 = Post2s::find(3);
-        // foreach ($post2->comment as $comment) {
-        //     echo $comment->detail;
-        //     echo "<hr>";
-        // }
+        //
     }
 
     /**
@@ -27,18 +19,8 @@ class Post2Controller extends Controller
      */
     public function create()
     {
-        // $post2 = Post2::find(3);
-        // $post2->comment()->create([
-        //     'detail' => 'Best Post I ever seen"'
-        // ]);
-        $post2 = Post2::create([
-            'title' => 'News Four Title',
-            'body' => 'This is my  news about my self'
-        ]);
-        $post2->tags()->create(['name' => 'Frontend']); //  tags() (method) 
-
+        //
     }
-
 
     /**
      * Store a newly created resource in storage.
